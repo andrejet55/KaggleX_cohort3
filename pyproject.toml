@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "kaggle-x"
+version = "0.1.0"
+description = ""
+authors = ["Andrea Franco <andrefrak@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "kaggle_x"}]
+
+[tool.poetry.dependencies]
+python = "3.10.0"
+numpy = "^1.25.2"
+pandas = "^2.1.0"
+jupyter = "^1.0.0"
+ipykernel = "^6.25.2"
+scipy = "^1.11.2"
+seaborn = "^0.12.2"
+matplotlib = "^3.7.2"
+mlxtend = "^0.22.0"
+fuzzywuzzy = "^0.18.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
