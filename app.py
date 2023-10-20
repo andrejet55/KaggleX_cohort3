@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+import analysis
+
 #App's primary structure
 def estructure():
         
@@ -90,6 +92,10 @@ def pd_visualization():
     max_power = zni_df.groupby('ZONE').MAX_POWER.max().sort_values(ascending=False)
     st.line_chart(max_power[:6])
     print(max_power[:6])
+
+    st.write("First 5 zones with the greatest power demand")
+    analysis.show_max_power('ZONE')
+    
 
 #clasiffication using the model
 def LinkScribe(tabs):
