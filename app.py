@@ -69,7 +69,7 @@ def complete_Data(zni_df):
 #EDA with pandas
 def pd_visualization():
 
-    zni_df = pd.read_csv('datasets/zni_data.py')
+    zni_df = pd.read_csv('datasets/Energia_en_ZNI.csv')
 
     zni_df = zni_df.rename(columns={'ID DEPATAMENTO':'PROVINCE_ID', 'DEPARTAMENTO':'PROVINCE','ID MUNICIPIO':'CITY_ID','MUNICIPIO':'CITY','ID LOCALIDAD':'ZONE_ID','LOCALIDAD':'ZONE','AÑO SERVICIO':'SERVICE_YEAR', 
                                     'MES SERVICIO':'SERVICE_MONTH','ENERGÍA ACTIVA':'ACTIVE_POWER','ENERGÍA REACTIVA':'REACTIVE_POWER','POTENCIA MÁXIMA':'MAX_POWER',
