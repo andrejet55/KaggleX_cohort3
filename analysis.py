@@ -63,4 +63,4 @@ def show_max_power(location):
     fig.update_xaxes(automargin=True)
 
     # Show the plot
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
