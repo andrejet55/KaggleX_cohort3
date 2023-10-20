@@ -54,6 +54,8 @@ def show_max_power(location):
     # Show the plot
     fig.show()
 
+    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
+
     # Create bar chart
     fig=px.bar(max_power[-5:],x=location,y="MAX_POWER",title="Lowest 'Maximum power' service daily sample")
     # Update marker color
