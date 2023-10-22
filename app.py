@@ -3,7 +3,15 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go 
+from plotly.subplots import make_subplots
+import plotly.figure_factory as ff # for plot heatmap
+from plotly.offline import init_notebook_mode
+init_notebook_mode(connected=True)
+import warnings
+warnings.filterwarnings('ignore')
 import analysis
 
 #App's primary structure
