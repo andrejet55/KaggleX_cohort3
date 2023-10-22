@@ -76,6 +76,40 @@ def complete_Data(zni_df):
     
     return fig
 
+#Show first 5 zones with lowest and highest 'max power' values
+def show_max_power(location,zni_df):
+    max_power = zni_df.groupby(location).MAX_POWER.max().sort_values(ascending=False)
+    max_power = pd.DataFrame(max_power).reset_index()
+
+    # Remove parentheses and their contents for visualization purposes
+    max_power[location] = max_power[location].str.replace(r'\s*\(.*\)', '', regex=True)
+
+    #print(max_power)
+
+    # Create bar chart
+    fig=px.bar(max_power[:5],x=location,y="MAX_POWER",title="Highest 'Maximum power' service daily sample")
+    # Update marker color
+    fig.update_traces(marker=dict(color='#008080'))
+
+    # Set automargin for x-axis tick labels to True
+    fig.update_xaxes(automargin=True)
+
+    # Show the plot
+    fig.show()
+
+    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
+
+    # Create bar chart
+    fig=px.bar(max_power[-5:],x=location,y="MAX_POWER",title="Lowest 'Maximum power' service daily sample")
+    # Update marker color
+    fig.update_traces(marker=dict(color='#008080'))
+
+    # Set automargin for x-axis tick labels to True
+    fig.update_xaxes(automargin=True)
+
+    # Show the plot
+    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
+
 #EDA with pandas
 def pd_visualization():
 
@@ -102,8 +136,8 @@ def pd_visualization():
     print(max_power[:6])
 
     st.write("First 5 zones with the greatest power demand")
-    analysis.show_max_power('ZONE')
-    
+    #analysis.show_max_power('ZONE')
+    show_max_power('ZONE',zni_df)
 
 #clasiffication using the model
 def LinkScribe(tabs):
